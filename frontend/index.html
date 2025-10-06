@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupcake Delivery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">🍰 Cupcake Delivery</h1>
+                <div class="nav-links">
+                    <a href="#home">Início</a>
+                    <a href="#cardapio">Cardápio</a>
+                    <a href="#pedidos">Pedidos</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção Home -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Os Melhores Cupcakes da Cidade!</h2>
+                <p>Delivery rápido e cupcakes fresquinhos</p>
+                <button class="cta-button" onclick="scrollToSection('cardapio')">
+                    Ver Cardápio
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção Cardápio -->
+        <section id="cardapio" class="menu-section">
+            <div class="container">
+                <h2>Nosso Cardápio</h2>
+                <div id="cupcakes-container" class="cupcakes-grid">
+                    <!-- Cupcakes serão carregados aqui via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrinho de Compras -->
+        <div id="carrinho" class="carrinho">
+            <h3>Seu Carrinho</h3>
+            <div id="itens-carrinho"></div>
+            <div class="carrinho-total">
+                <strong>Total: R$ <span id="total-carrinho">0.00</span></strong>
+            </div>
+            <button onclick="finalizarPedido()" class="btn-finalizar">
+                Finalizar Pedido
+            </button>
+        </div>
+
+        <!-- Modal de Finalização -->
+        <div id="modal-pedido" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="fecharModal()">&times;</span>
+                <h3>Finalizar Pedido</h3>
+                <form id="form-pedido">
+                    <input type="text" id="cliente-nome" placeholder="Seu nome" required>
+                    <input type="email" id="cliente-email" placeholder="Seu email" required>
+                    <textarea id="cliente-endereco" placeholder="Endereço completo" required></textarea>
+                    <button type="submit">Confirmar Pedido</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Cupcake Delivery - Projeto PIT</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
